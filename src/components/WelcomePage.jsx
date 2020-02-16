@@ -41,6 +41,7 @@ class WelcomePage extends Component {
               variant='contained'
               color='primary'
               style={{ marginTop: "10px", width: "170px" }}
+              onClick={() => this.props.history.push("/signup")}
             >
               Signup
             </Button>

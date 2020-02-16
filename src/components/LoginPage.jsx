@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "./../axios";
 
 import { Card, Button, TextField } from "@material-ui/core";
 
@@ -18,6 +19,12 @@ class LoginPage extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     console.log(email, password);
+    axios
+      .post("/login", {
+        email,
+        password
+      })
+      .then(resp => console.log(resp));
   };
 
   render() {
