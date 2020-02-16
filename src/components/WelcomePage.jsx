@@ -9,7 +9,7 @@ class WelcomePage extends Component {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "200px"
+          paddingTop: "200px"
         }}
       >
         <Paper
@@ -22,20 +22,29 @@ class WelcomePage extends Component {
           }}
         >
           <h2>Welcome to the Game!</h2>
-          <Button
-            variant='contained'
-            color='primary'
-            style={{ marginTop: "10px" }}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column"
+            }}
           >
-            Login
-          </Button>
-          <Button
-            variant='contained'
-            color='primary'
-            style={{ marginTop: "10px" }}
-          >
-            Signup
-          </Button>
+            <Button
+              variant='contained'
+              color='primary'
+              style={{ marginTop: "10px", width: "170px" }}
+              onClick={() => this.props.history.push("/login")}
+            >
+              Login
+            </Button>
+            <Button
+              variant='contained'
+              color='primary'
+              style={{ marginTop: "10px", width: "170px" }}
+            >
+              Signup
+            </Button>
+          </div>
         </Paper>
       </div>
     );
