@@ -9,7 +9,8 @@ class WelcomePage extends Component {
         style={{
           display: "flex",
           justifyContent: "center",
-          paddingTop: "200px"
+          paddingTop: "100px",
+          height: "1000px"
         }}
       >
         <Paper
@@ -18,7 +19,8 @@ class WelcomePage extends Component {
             display: "flex",
             flexDirection: "column",
             padding: "30px",
-            width: "400px"
+            width: "400px",
+            height: "200px"
           }}
         >
           <h2>Welcome to the Game!</h2>

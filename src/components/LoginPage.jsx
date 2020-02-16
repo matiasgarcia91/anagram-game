@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "./../axios";
-
+import { connect } from "react-redux";
+import { login } from "../store/session/actions";
 import { Card, Button, TextField } from "@material-ui/core";
 
 class LoginPage extends Component {
@@ -18,13 +19,7 @@ class LoginPage extends Component {
   login = e => {
     e.preventDefault();
     const { email, password } = this.state;
-    console.log(email, password);
-    axios
-      .post("/login", {
-        email,
-        password
-      })
-      .then(resp => console.log(resp));
+    this.props.login(email, password);
   };
 
   render() {
@@ -82,7 +77,7 @@ class LoginPage extends Component {
             <Button
               variant='contained'
               style={{ marginTop: "10px", width: "100px" }}
-              onClick={() => this.props.history.pop()}
+              onClick={() => this.props.history.push("/")}
             >
               Cancel
             </Button>
@@ -93,4 +88,4 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export default connect(() => ({}), { login })(LoginPage);
