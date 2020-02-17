@@ -69,6 +69,7 @@ class SignupPage extends Component {
             <TextField
               onChange={this.onText}
               value={this.state.password}
+              type='password'
               name='password'
               label='Password'
               variant='filled'

@@ -1,7 +1,6 @@
 import axios from "../../axios";
 
-export const joinRoom = id => {
-  console.log(id);
+export const joinRoom = (id, history) => {
   return (dispatch, getState) => {
     const jwt = getState().session.jwt;
     axios
@@ -12,7 +11,10 @@ export const joinRoom = id => {
           headers: { Authorization: `Bearer ${jwt}` }
         }
       )
-      .then(joined => console.log(joined));
+      .then(joined => {
+        dispatch(joinedRoom(id));
+        history.push(`/room/${id}`);
+      });
   };
 };
 
@@ -27,5 +29,12 @@ export const createRoom = roomName => {
         { headers: { Authorization: `Bearer ${jwt}` } }
       )
       .then(response => console.log("room created", response));
+  };
+};
+
+export const joinedRoom = id => {
+  return {
+    type: "gameroom/JOINED",
+    payload: { roomId: id }
   };
 };

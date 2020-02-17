@@ -7,7 +7,7 @@ import NewRoomForm from "./NewRoomForm";
 
 class LobbyPage extends Component {
   joinRoom = id => {
-    this.props.joinRoom(id);
+    this.props.joinRoom(id, this.props.history);
   };
 
   render() {

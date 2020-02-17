@@ -56,6 +56,7 @@ class LoginPage extends Component {
               onChange={this.onText}
               value={this.state.password}
               name='password'
+              type='password'
               label='Password'
               variant='filled'
             />

@@ -7,6 +7,7 @@ import LoginPage from "./components/LoginPage";
 import { Route, Switch } from "react-router-dom";
 import SignupPage from "./components/SignupPage";
 import LobbyPage from "./components/LobbyPage";
+import RoomPage from "./components/RoomPage";
 
 class App extends Component {
   stream = new EventSource("http://localhost:4000/stream");
@@ -34,6 +35,7 @@ class App extends Component {
             <Route path='/login' component={LoginPage} />
             <Route path='/signup' component={SignupPage} />
             <Route path='/lobby' component={LobbyPage} />
+            <Route path='/room/:roomId' component={RoomPage} />
             <Route path='/' component={WelcomePage} />
           </Switch>
         </div>
