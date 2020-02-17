@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { joinRoom } from "../store/gameRooms/actions";
-
 import { List, ListItem, Button, ListItemText } from "@material-ui/core";
+
+import NewRoomForm from "./NewRoomForm";
 
 class LobbyPage extends Component {
   joinRoom = id => {
-    this.props.dispatch(joinRoom(id));
+    this.props.joinRoom(id);
   };
 
   render() {
@@ -44,7 +45,9 @@ class LobbyPage extends Component {
           <h2>Rooms</h2>
           <List>{renderRooms}</List>
         </div>
-        <div style={{ flex: 1 }}>Create a room Form</div>
+        <div style={{ flex: 1 }}>
+          <NewRoomForm />
+        </div>
       </div>
     );
   }
@@ -57,4 +60,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(LobbyPage);
+export default connect(mapStateToProps, { joinRoom })(LobbyPage);

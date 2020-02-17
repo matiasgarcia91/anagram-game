@@ -9,6 +9,11 @@ export default function reducer(state = initialState, action) {
         allRooms: [...action.payload]
       };
     }
+    case "gameroom/ONE_ROOM": {
+      return {
+        allRooms: [...state.allRooms, action.payload]
+      };
+    }
     default: {
       return state;
     }
