@@ -5,14 +5,7 @@ import { Paper, Button, FormHelperText } from "@material-ui/core";
 class WelcomePage extends Component {
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          paddingTop: "100px",
-          height: "1000px"
-        }}
-      >
+      <>
         <Paper
           variant='elevation'
           style={{
@@ -49,7 +42,7 @@ class WelcomePage extends Component {
             </Button>
           </div>
         </Paper>
-      </div>
+      </>
     );
   }
 }

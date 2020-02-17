@@ -31,14 +31,7 @@ class SignupPage extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          paddingTop: "100px",
-          height: "1000px"
-        }}
-      >
+      <>
         <Card
           variant='elevation'
           style={{
@@ -80,24 +73,30 @@ class SignupPage extends Component {
               label='Password'
               variant='filled'
             />
-            <Button
-              variant='contained'
-              color='primary'
-              type='submit'
-              style={{ marginTop: "10px", width: "100px" }}
-            >
-              Submit
-            </Button>
-            <Button
-              variant='contained'
-              style={{ marginTop: "10px", width: "100px" }}
-              onClick={() => this.props.history.pop()}
-            >
-              Cancel
-            </Button>
+            <div style={{ display: "flex" }}>
+              <Button
+                variant='contained'
+                color='primary'
+                type='submit'
+                style={{
+                  marginRight: "10px",
+                  marginTop: "10px",
+                  width: "100px"
+                }}
+              >
+                Submit
+              </Button>
+              <Button
+                variant='contained'
+                style={{ marginTop: "10px", width: "100px" }}
+                onClick={() => this.props.history.push("/")}
+              >
+                Cancel
+              </Button>
+            </div>
           </form>
         </Card>
-      </div>
+      </>
     );
   }
 }

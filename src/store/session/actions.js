@@ -1,6 +1,6 @@
 import axios from "../../axios";
 
-export const login = (email, password) => {
+export const login = (email, password, history) => {
   return (dispatch, getState) => {
     axios
       .post("/login", {
@@ -16,6 +16,8 @@ export const login = (email, password) => {
             email
           }
         });
-      });
+        history.push("/lobby");
+      })
+      .catch(error => console.error(error));
   };
 };
